@@ -1,0 +1,1 @@
+<?xml version="1.0"?><RequestDataMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.net/"><DataId>834f3f43-0201-40bc-92ef-62e734c84d30</DataId><String>String property value</String></RequestDataMessage>

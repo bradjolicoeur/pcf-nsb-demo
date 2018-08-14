@@ -25,16 +25,9 @@ namespace pcf_nsb_client
             Console.WriteLine("Press enter to send a message");
             Console.WriteLine("Press any key to exit");
 
-
             while (true)
             {
-                var key = Console.ReadKey();
-                Console.WriteLine();
-
-                if (key.Key != ConsoleKey.Enter)
-                {
-                    break;
-                }
+                
                 var guid = Guid.NewGuid();
                 Console.WriteLine($"Requesting to get data by id: {guid:N}");
 
@@ -50,21 +43,6 @@ namespace pcf_nsb_client
                 Thread.Sleep(1000);
             }
 
-
-            // Handle Control+C or Control+Break
-            Console.CancelKeyPress += async (o, e) =>
-            {
-                Console.WriteLine("Exit");
-
-                await endpointInstance.Stop()
-                .ConfigureAwait(false);
-
-                // Allow the manin thread to continue and exit...
-                waitHandle.Set();
-            };
-
-            // Wait
-            waitHandle.WaitOne();
 
         }
     }
