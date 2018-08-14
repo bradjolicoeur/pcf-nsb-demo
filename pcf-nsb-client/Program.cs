@@ -22,8 +22,6 @@ namespace pcf_nsb_client
 
             var endpointInstance = await Endpoint.Start(endpointConfiguration)
                 .ConfigureAwait(false);
-            Console.WriteLine("Press enter to send a message");
-            Console.WriteLine("Press any key to exit");
 
             while (true)
             {
