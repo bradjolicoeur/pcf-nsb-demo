@@ -1,12 +1,18 @@
 ﻿using NServiceBus;
 using System.Threading.Tasks;
 using NServiceBus.Logging;
-
+using Microsoft.Extensions.Configuration;
 
 public class RequestDataMessageHandler :
     IHandleMessages<RequestDataMessage>
 {
     static ILog log = LogManager.GetLogger<RequestDataMessageHandler>();
+    private string configValue { get; set; }
+
+    public RequestDataMessageHandler(IConfigurationRoot configuration)
+    {
+        configValue = configuration.GetSection("toast").Value;
+    }
 
     public async Task Handle(RequestDataMessage message, IMessageHandlerContext context)
     {
@@ -18,7 +24,7 @@ public class RequestDataMessageHandler :
         var response = new DataResponseMessage
         {
             DataId = message.DataId,
-            String = message.String
+            String = configValue + " " + message.String
         };
 
         await context.Reply(response)
