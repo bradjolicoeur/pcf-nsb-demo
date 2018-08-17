@@ -67,7 +67,7 @@ namespace pcf_nsb_client
             endpointConfiguration.UsePersistence<LearningPersistence>();
             var transport = endpointConfiguration.UseTransport<RabbitMQTransport>();
             transport.UseConventionalRoutingTopology();
-            transport.ConnectionString(configuration.GetSection("RabbitMQ").Value);
+            transport.ConnectionString("host=rabbitmq.local.pcfdev.io; username=6da81eaf-6607-4b91-8730-9e9e676c1973; password=9feelcfev1hlk2aiquspkra2kj; virtualhost=eb49218e-e0f1-4ab1-8798-729c6b5c222e");
 
             endpointConfiguration.EnableInstallers();
 

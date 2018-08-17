@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pcf-nsb-client", "pcf-nsb-client\pcf-nsb-client.csproj", "{E2B02BCB-90C9-42BD-9AEA-7A44F1C3778B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pcf-nsb-client", "pcf-nsb-client\pcf-nsb-client.csproj", "{E2B02BCB-90C9-42BD-9AEA-7A44F1C3778B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pcf-nsb-server", "pcf-nsb-server\pcf-nsb-server.csproj", "{C8EE68A5-ADE7-4E4A-85E1-27ABEBE3AED8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pcf-nsb-server", "pcf-nsb-server\pcf-nsb-server.csproj", "{C8EE68A5-ADE7-4E4A-85E1-27ABEBE3AED8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pcf-nsb-shared", "pcf-nsb-shared\pcf-nsb-shared.csproj", "{B5A1DE70-1246-4D68-927D-AFC5CBABD858}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pcf-nsb-shared", "pcf-nsb-shared\pcf-nsb-shared.csproj", "{B5A1DE70-1246-4D68-927D-AFC5CBABD858}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B6388339-5732-4505-9E7E-F5824D2E1A0F}"
+	ProjectSection(SolutionItems) = preProject
+		.deployment = .deployment
+		manifest.yml = manifest.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
