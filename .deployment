@@ -1,2 +1,2 @@
 [config]
-project = pcf-nsb-server/pcf-nsb-server.csproj
+project = pcf-nsb-client/pcf-nsb-client.csproj
