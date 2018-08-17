@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NServiceBus;
 using NServiceBus.Logging;
+using Steeltoe.Extensions.Configuration.CloudFoundry;
 using System;
 using System.IO;
 using System.Threading;
@@ -23,9 +24,6 @@ namespace pcf_nsb_client
             // Create service collection
             ServiceCollection serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
-
-
-            Console.WriteLine(configuration.GetSection("toast").Value); //just testing the config setup
 
             Console.Title = "Samples.FullDuplex.Client";
             LogManager.Use<DefaultFactory>()
@@ -67,7 +65,11 @@ namespace pcf_nsb_client
 
             var endpointConfiguration = new EndpointConfiguration("Samples.FullDuplex.Client");
             endpointConfiguration.UsePersistence<LearningPersistence>();
-            endpointConfiguration.UseTransport<LearningTransport>();
+            var transport = endpointConfiguration.UseTransport<RabbitMQTransport>();
+            transport.UseConventionalRoutingTopology();
+            transport.ConnectionString(configuration.GetSection("RabbitMQ").Value);
+
+            endpointConfiguration.EnableInstallers();
 
             endpointConfiguration.UseContainer<AutofacBuilder>(
                customizations: customizations =>
@@ -84,6 +86,7 @@ namespace pcf_nsb_client
             configuration = new ConfigurationBuilder()
                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                .AddJsonFile($"appsettings.{environmentName}.json", optional: true)
+               .AddCloudFoundry()
                .Build();
 
             // Add access to generic IConfigurationRoot
