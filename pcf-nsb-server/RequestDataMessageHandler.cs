@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using NServiceBus.Logging;
 using Microsoft.Extensions.Configuration;
+using pcf_nsb_shared;
 
 public class RequestDataMessageHandler :
     IHandleMessages<RequestDataMessage>

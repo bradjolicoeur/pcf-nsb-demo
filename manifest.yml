@@ -6,5 +6,15 @@ applications:
   disk_quota: 100M
   no-route: true
   health-check-type: process
+  path: ./pcf-nsb-client/
+  services:
+   - rabbitmq
+- name: pcf-nsb-server
+  buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack
+  memory: 256M
+  disk_quota: 100M
+  no-route: true
+  health-check-type: process
+  path: ./pcf-nsb-server/
   services:
    - rabbitmq

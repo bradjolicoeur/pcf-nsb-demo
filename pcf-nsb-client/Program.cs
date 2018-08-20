@@ -6,11 +6,10 @@ using NServiceBus;
 using NServiceBus.Logging;
 using Steeltoe.Extensions.Configuration.CloudFoundry;
 using System;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using RabbitMQ.Client;
 using Newtonsoft.Json.Linq;
+using pcf_nsb_shared;
 
 namespace pcf_nsb_client
 {
@@ -95,6 +94,10 @@ namespace pcf_nsb_client
 
         private static string GetConnectionString()
         {
+            string local = configuration.GetSection("RabbitMQ").Value;
+            if (!string.IsNullOrEmpty(local))
+                return local;
+
             var credentials = "$..[?(@.name=='rabbitmq')].credentials";
             var jObj = JObject.Parse(Environment.GetEnvironmentVariable("VCAP_SERVICES"));
 
