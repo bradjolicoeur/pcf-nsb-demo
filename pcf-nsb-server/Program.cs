@@ -81,11 +81,6 @@ namespace pcf_nsb_server
 
         private static string GetConnectionString()
         {
-            string local = configuration.GetSection("RabbitMQ").Value;
-            if (!string.IsNullOrEmpty(local))
-                return local;
-
-
             var credentials = "$..[?(@.name=='rabbitmq')].credentials";
             var jObj = JObject.Parse(Environment.GetEnvironmentVariable("VCAP_SERVICES"));
 
