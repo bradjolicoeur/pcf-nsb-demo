@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pcf-nsb-client", "pcf-nsb-client\pcf-nsb-client.csproj", "{6A33CE69-FF51-4915-AC70-B7F2213530B1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pcf-nsb-shared", "..\Shared\pcf-nsb-shared\pcf-nsb-shared.csproj", "{73D7AF37-7C68-483A-B06F-D784825750D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F47D1C74-B9DC-4347-81DC-BE6D2D321D99}"
+	ProjectSection(SolutionItems) = preProject
+		.deployment = .deployment
+		manifest.yml = manifest.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A33CE69-FF51-4915-AC70-B7F2213530B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A33CE69-FF51-4915-AC70-B7F2213530B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A33CE69-FF51-4915-AC70-B7F2213530B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A33CE69-FF51-4915-AC70-B7F2213530B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D7AF37-7C68-483A-B06F-D784825750D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D7AF37-7C68-483A-B06F-D784825750D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D7AF37-7C68-483A-B06F-D784825750D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D7AF37-7C68-483A-B06F-D784825750D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F360ECF-D675-49AB-A6B1-871A752C1E85}
+	EndGlobalSection
+EndGlobal
